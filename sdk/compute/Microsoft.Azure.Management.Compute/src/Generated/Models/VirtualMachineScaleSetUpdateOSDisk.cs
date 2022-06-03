@@ -49,18 +49,7 @@ namespace Microsoft.Azure.Management.Compute.Models
         /// <param name="vhdContainers">The list of virtual hard disk container
         /// uris.</param>
         /// <param name="managedDisk">The managed disk parameters.</param>
-        /// <param name="deleteOption">Specifies whether OS Disk should be
-        /// deleted or detached upon VMSS Flex deletion (This feature is
-        /// available for VMSS with Flexible OrchestrationMode only).
-        /// &lt;br&gt;&lt;br&gt; Possible values: &lt;br&gt;&lt;br&gt;
-        /// **Delete** If this value is used, the OS disk is deleted when VMSS
-        /// Flex VM is deleted.&lt;br&gt;&lt;br&gt; **Detach** If this value is
-        /// used, the OS disk is retained after VMSS Flex VM is deleted.
-        /// &lt;br&gt;&lt;br&gt; The default value is set to **Delete**. For an
-        /// Ephemeral OS Disk, the default value is set to **Delete**. User
-        /// cannot change the delete option for Ephemeral OS Disk. Possible
-        /// values include: 'Delete', 'Detach'</param>
-        public VirtualMachineScaleSetUpdateOSDisk(CachingTypes? caching = default(CachingTypes?), bool? writeAcceleratorEnabled = default(bool?), int? diskSizeGB = default(int?), VirtualHardDisk image = default(VirtualHardDisk), IList<string> vhdContainers = default(IList<string>), VirtualMachineScaleSetManagedDiskParameters managedDisk = default(VirtualMachineScaleSetManagedDiskParameters), string deleteOption = default(string))
+        public VirtualMachineScaleSetUpdateOSDisk(CachingTypes? caching = default(CachingTypes?), bool? writeAcceleratorEnabled = default(bool?), int? diskSizeGB = default(int?), VirtualHardDisk image = default(VirtualHardDisk), IList<string> vhdContainers = default(IList<string>), VirtualMachineScaleSetManagedDiskParameters managedDisk = default(VirtualMachineScaleSetManagedDiskParameters))
         {
             Caching = caching;
             WriteAcceleratorEnabled = writeAcceleratorEnabled;
@@ -68,7 +57,6 @@ namespace Microsoft.Azure.Management.Compute.Models
             Image = image;
             VhdContainers = vhdContainers;
             ManagedDisk = managedDisk;
-            DeleteOption = deleteOption;
             CustomInit();
         }
 
@@ -121,23 +109,6 @@ namespace Microsoft.Azure.Management.Compute.Models
         /// </summary>
         [JsonProperty(PropertyName = "managedDisk")]
         public VirtualMachineScaleSetManagedDiskParameters ManagedDisk { get; set; }
-
-        /// <summary>
-        /// Gets or sets specifies whether OS Disk should be deleted or
-        /// detached upon VMSS Flex deletion (This feature is available for
-        /// VMSS with Flexible OrchestrationMode only).
-        /// &amp;lt;br&amp;gt;&amp;lt;br&amp;gt; Possible values:
-        /// &amp;lt;br&amp;gt;&amp;lt;br&amp;gt; **Delete** If this value is
-        /// used, the OS disk is deleted when VMSS Flex VM is
-        /// deleted.&amp;lt;br&amp;gt;&amp;lt;br&amp;gt; **Detach** If this
-        /// value is used, the OS disk is retained after VMSS Flex VM is
-        /// deleted. &amp;lt;br&amp;gt;&amp;lt;br&amp;gt; The default value is
-        /// set to **Delete**. For an Ephemeral OS Disk, the default value is
-        /// set to **Delete**. User cannot change the delete option for
-        /// Ephemeral OS Disk. Possible values include: 'Delete', 'Detach'
-        /// </summary>
-        [JsonProperty(PropertyName = "deleteOption")]
-        public string DeleteOption { get; set; }
 
     }
 }

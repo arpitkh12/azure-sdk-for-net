@@ -47,14 +47,10 @@ namespace Microsoft.Azure.Management.Compute.Models
         /// will trigger periodic patch assessments. The property
         /// provisionVMAgent must be true. Possible values include:
         /// 'ImageDefault', 'AutomaticByPlatform'</param>
-        /// <param name="automaticByPlatformSettings">Specifies additional
-        /// settings for patch mode AutomaticByPlatform in VM Guest Patching on
-        /// Linux.</param>
-        public LinuxPatchSettings(string patchMode = default(string), string assessmentMode = default(string), LinuxVMGuestPatchAutomaticByPlatformSettings automaticByPlatformSettings = default(LinuxVMGuestPatchAutomaticByPlatformSettings))
+        public LinuxPatchSettings(string patchMode = default(string), string assessmentMode = default(string))
         {
             PatchMode = patchMode;
             AssessmentMode = assessmentMode;
-            AutomaticByPlatformSettings = automaticByPlatformSettings;
             CustomInit();
         }
 
@@ -90,13 +86,6 @@ namespace Microsoft.Azure.Management.Compute.Models
         /// </summary>
         [JsonProperty(PropertyName = "assessmentMode")]
         public string AssessmentMode { get; set; }
-
-        /// <summary>
-        /// Gets or sets specifies additional settings for patch mode
-        /// AutomaticByPlatform in VM Guest Patching on Linux.
-        /// </summary>
-        [JsonProperty(PropertyName = "automaticByPlatformSettings")]
-        public LinuxVMGuestPatchAutomaticByPlatformSettings AutomaticByPlatformSettings { get; set; }
 
     }
 }

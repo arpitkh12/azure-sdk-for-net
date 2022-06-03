@@ -38,15 +38,10 @@ namespace Microsoft.Azure.Management.Compute.Models
         /// is automatically set to false and cannot be set to true.</param>
         /// <param name="disableAutomaticRollback">Whether OS image rollback
         /// feature should be disabled. Default value is false.</param>
-        /// <param name="useRollingUpgradePolicy">Indicates whether rolling
-        /// upgrade policy should be used during Auto OS Upgrade. Default value
-        /// is false. Auto OS Upgrade will fallback to the default policy if no
-        /// policy is defined on the VMSS.</param>
-        public AutomaticOSUpgradePolicy(bool? enableAutomaticOSUpgrade = default(bool?), bool? disableAutomaticRollback = default(bool?), bool? useRollingUpgradePolicy = default(bool?))
+        public AutomaticOSUpgradePolicy(bool? enableAutomaticOSUpgrade = default(bool?), bool? disableAutomaticRollback = default(bool?))
         {
             EnableAutomaticOSUpgrade = enableAutomaticOSUpgrade;
             DisableAutomaticRollback = disableAutomaticRollback;
-            UseRollingUpgradePolicy = useRollingUpgradePolicy;
             CustomInit();
         }
 
@@ -73,15 +68,6 @@ namespace Microsoft.Azure.Management.Compute.Models
         /// </summary>
         [JsonProperty(PropertyName = "disableAutomaticRollback")]
         public bool? DisableAutomaticRollback { get; set; }
-
-        /// <summary>
-        /// Gets or sets indicates whether rolling upgrade policy should be
-        /// used during Auto OS Upgrade. Default value is false. Auto OS
-        /// Upgrade will fallback to the default policy if no policy is defined
-        /// on the VMSS.
-        /// </summary>
-        [JsonProperty(PropertyName = "useRollingUpgradePolicy")]
-        public bool? UseRollingUpgradePolicy { get; set; }
 
     }
 }
